@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis./css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+#landing__page {
+  background-color: #291947ea;
+  padding: 42px 140px 24px 140px;
+  height: 42vh;
+  position: relative;
+}
+
+.background__img {
+  background-image: url(https://preview.redd.it/my-top-50-video-games-of-all-time-ranked-v0-gtlm8rj1n1ia1.jpg?auto=webp&s=9964af4584728d76690eb9342fecfd1d75637291);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+.background__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(41, 25, 71, 0.83);
+  pointer-events: none;
+}
+
+.website__logo {
+  width: 100%;
+  max-width: 150px;
+  z-index: 100;
+  position: absolute;
+  top: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  transition: opacity 300ms ease;
+  color: white;
+}
+
+/* 
+
+NAVIGATION
+
+*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.website__nav-bar {
+  margin-bottom: 60px;
+}
+
+.nav__link--list {
+  display: flex;
+}
+
+.nav__link {
+  margin: 0 26px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.nav__link--contact {
+  background-color: #fff;
+  color: #41286fea;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 48px;
+  text-transform: uppercase;
+  padding: 16px 42px;
+  transition: all 300ms ease;
+}
+.nav__link--contact:hover {
+  text-decoration: none;
+  background-color: #ff328f;
+  color: white;
+  transition: all 300ms ease;
+  animation: contact__animation 600ms infinite alternate-reverse;
+}
+
+@keyframes contact__animation {
+  0% {
+    transform: scale(100%);
+  }
+  100% {
+    transform: scale(93%);
+  }
+}
+
+.nav__link--hover-effect:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  bottom: -3px;
+  right: 0;
+  transition: all 300ms ease;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.nav__link:active {
+  animation: onclick 200ms ease;
+}
+
+@keyframes onclick {
+  0% {
+    transform: scale(100%);
+  }
+  100% {
+    transform: scale(90%);
+  }
+}
+
+.nav__link--hover-effect:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* 
+
+HEADER
+
+*/
+
+.header__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 42px;
+}
+
+.header__title {
+  width: 100%;
+  max-width: 500px;
+  font-size: 45px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #fff;
+  margin: 0 50px 42px;
+  z-index: 999;
+}
+
+.input__wrapper {
+  width: 100%;
+  max-width: 640px;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.search__bar {
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  max-width: 640px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 20px;
+  border-radius: 50px;
+  border: none;
+  position: relative;
+}
+
+.search__icon--wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  padding: 0 20px 0 8px;
+  color: #6030b1;
+  font-size: 32px;
+  transition: all 0.2s ease;
+}
+
+.fa-solid {
+  transition: all 300ms ease;
+}
+
+.fa-solid:hover {
+  cursor: pointer;
+  color: #ff328f;
+}
