@@ -15,7 +15,7 @@
       <div class="background__img"></div>
       <div class="container">
         <nav class="website__nav-bar">
-          <figure >
+          <figure>
             <img
               class="website__logo"
               src="https://dev.d24jig8s1lr7n9.amplifyapp.com/img/whitelogo.39850b27.png"
@@ -27,7 +27,7 @@
             </li>
             <li class="nav__link">
               <a class="nav__link--hover-effect" href="#games"
-                >Find your game</a
+                >Find your card</a
               >
             </li>
             <li class="nav__link">
@@ -40,7 +40,7 @@
           </ul>
         </nav>
         <div class="header__row">
-          <h2 class="header__title">Browse our games</h2>
+          <h2 class="header__title">Browse our cards</h2>
           <div class="input__wrapper">
             <input
               class="search__bar"
@@ -54,5 +54,36 @@
         </div>
       </div>
     </section>
+
+    <main>
+      <section id="shopping">
+        <div class="shopping__container">
+          <div class="shopping__row">
+            <div class="shopping__title">Search results:</div>
+            <select id="price__filter">
+              <option value disabled selected>Sort</option>
+              <option value="LOW__TO__HIGH">Price, Low to High</option>
+              <option value="HIGH__TO__LOW">Price, High to Low</option>
+              <option value="TYPE">Type</option>
+              <option value="SUB-TYPE">Sub-type</option>
+            </select>
+          </div>
+            <div class="pokemon__list">
+              <div class="pokemon">
+                <div class="pokemon__slot">
+                  <div class="pokemon__slot--description">
+                    <img class="pokemon__img" src="">
+                    <h3>Pokemon Name</h3>
+                    <p><b>Type:</b> pokemon.type</p>
+                    <p><b>Sub-type</b> pokemon.subtype</p>
+                    <p><b>Attacks:</b> pokemon.health</p>
+                    <p><b>Prices:</b> pokemon.price</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
