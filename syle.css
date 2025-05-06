@@ -285,15 +285,26 @@ CARDS
   transition: 0.3s;
   cursor: pointer;
   border-radius: 10px;
+  transition: all 300ms ease;
+}
+
+.pokemon__slot:hover {
+  background-color: rgb(221, 217, 217);
+}
+
+.pokemon__slot:hover {
+  transform: scale(97%);
 }
 
 .pokemon__slot--description {
   padding: 2px 16px;
 }
 
-.pokemon__img:hover {
-  
+.pokemon__img {
+  position: relative;
+  transition: all 300ms ease;
 }
+
 
 #loader{
   font-size: 50px;
