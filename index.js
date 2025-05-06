@@ -2,14 +2,21 @@ const pokemonListEl = document.querySelector(".pokemon__list");
 
 async function getData(filter) {
 
-  if (filter === 'LOW_TO_HIGH') {
-    console.log(filter);
-    pokemon.sort((a, b) => a.hp - b.hp)
-    console.log(filterCards)
-  }
-  
   const pokemon = await fetch("https://api.pokemontcg.io/v2/cards");
   const pokemonData = await pokemon.json();
+  
+  if (filter === 'LOW_TO_HIGH') {
+    pokemonData.data.sort((a, b) => a.hp - b.hp)
+    console.log(filterCards)
+  }
+  else if (filter === 'HIGH_TO_LOW') {
+    pokemonData.data.sort((a, b) => b.hp - a.hp)
+    console.log(filterCards)
+  }
+  else if (filter === 'TYPE') {
+    pokemonData.data.sort((a, b) => a.type - b.type)
+    console.log(filterCards)
+  }
 
   console.log(pokemonData);
   pokemonListEl.innerHTML = pokemonData.data.map((pokemon) => userHTML(pokemon)).join("");
@@ -35,4 +42,3 @@ function filterCards(event) {
 setTimeout(() => {
   getData();
 })
-
