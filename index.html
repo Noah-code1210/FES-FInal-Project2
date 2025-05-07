@@ -45,13 +45,10 @@
         <div class="header__row">
           <h2 class="header__title">Browse our cards</h2>
           <div class="input__wrapper">
-            <input
-              class="search__bar"
-              type="text"
-              placeholder="Search by Name, Year, or Keywoard"
-            />
+            <input class="search__bar" type="text" id="search" 
+            placeholder="Search Pokemon Cards...."/>
             <div class="search__icon--wrapper">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
             </div>
           </div>
         </div>
@@ -76,10 +73,10 @@
           </div>
           <div id="pokemon">
             <div class="pokemon__list">
-              <div class="pokemon__slot">
+              <div class="pokemon__slot" id="card-0">
                 <div class="pokemon__slot--description">
                   <img class="pokemon__img" src="" />
-                  <h3>Pokemon Name</h3>
+                  <h3 id="name-0">Pokemon Name</h3>
                   <p><b>Type: </b> pokemon.type</p>
                   <p><b>Sub-type: </b> pokemon.subtype</p>
                   <p><b>Health: </b> pokemon.health</p>
