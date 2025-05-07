@@ -1,8 +1,15 @@
 const pokemonListEl = document.querySelector(".pokemon__list");
+const searchInputEl = document.getElementById('search'); // Get the search input element
+const searchButtonEl = document.getElementById('searchButton'); // Get the search button
 
-async function getData(filter) {
+
+async function getData(filter , query = "") {
+
+  const apiUrl = query
+    ? `https://api.pokemontcg.io/v2/cards?q=name:${query}` // Construct API URL with search query
+    : `https://api.pokemontcg.io/v2/cards`;
   // Fetching data from API/converting to HTML
-  const pokemon = await fetch("https://api.pokemontcg.io/v2/cards");
+  const pokemon = await fetch(apiUrl);
   const pokemonData = await pokemon.json();
 
   // Making sort filter responsive
@@ -25,10 +32,6 @@ async function getData(filter) {
       return 0;
     });
   }
-
-  
-  
-  
   
   
   console.log(pokemonData);
@@ -37,32 +40,6 @@ async function getData(filter) {
   .join("");
 }
 
-async function search() {
-  let input = document.getElementById('search').value.toLowerCase();
-  const response = await fetch("https://api.pokemontcg.io/v2/cards");
-  const data = await response.json(); // Convert response to JSON
-  const cards = data.data; // Assuming your response has a 'data' field
-
-  // Loop through cards and display or hide them based on input
-  for (let i = 0; i < cards.length; ++i) {
-      const cardElement = document.getElementById(`name-${i}`); // Move here
-      
-      if (cardElement) {
-          if (!cards[i].name.toLowerCase().includes(input)) {
-              cardElement.style.display = "none"; // Hide the card
-          } else {
-              cardElement.style.display = "list-item"; // Show the card
-          }
-      } else {
-          console.warn(`Element with id name-${i} not found`);
-      }
-  }
-}
-
-// Event listener setup
-document.getElementById("searchButton").addEventListener("click", function() {
-  search(); // Call the search function
-});
 
 
 // Making HTML responsive with API
@@ -80,9 +57,16 @@ function userHTML(pokemon) {
 }
 
 function filterCards(event) {
-  getData(event.target.value);
+  getData(event.target.value, searchInputEl.value); // Pass the search input value
 }
 
-setTimeout(() => {
-  getData();
-})
+function handleSearch() {
+  const searchTerm = searchInputEl.value; // Get the value from the input
+  getData(document.getElementById('price__filter').value, searchTerm); // Pass the search term to getData
+}
+
+// Event listener for the search button
+searchButtonEl.addEventListener('click', handleSearch);
+
+// Initial load of all cards
+getData();
